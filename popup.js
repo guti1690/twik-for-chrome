@@ -26,7 +26,7 @@ window.onload = function() {
   populateProfiles();
   populatePasswordLength();
   populatePasswordType();
-  
+
   // Select the profile and fill the settings
   chrome.tabs.getSelected(null, function(tab) {
     url = tab.url;
@@ -40,6 +40,8 @@ window.onload = function() {
 function updateValues() {
   settings = bgPage.getSiteSettings(url);
   $('#profile-color-marker').css('background-color', PROFILE_COLORS[settings.color]);
+  $('.twik-header').css('background-color', PROFILE_COLORS[settings.color]); // Set profile color
+  $('#link-options').css('color', PROFILE_COLORS[settings.color]); // Set profile color
   $('#tag').val(settings.tag);
   $('#password_length').val(settings.password_length);
   $('#password_type').val(settings.password_type);
@@ -50,7 +52,7 @@ function setListeners() {
     bgPage.selectProfile(url, $(this).val());
     updateValues();
   });
-  
+
   $('#tag').change(function() { updateSiteSettings()} );
   $('#password_length').change(function() { updateSiteSettings()} );
   $('#password_type').change(function() { updateSiteSettings()} );
