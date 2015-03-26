@@ -35,7 +35,7 @@ window.onload = function() {
     updateValues();
     setListeners();
   });
-}
+};
 
 function updateValues() {
   settings = bgPage.getSiteSettings(url);
