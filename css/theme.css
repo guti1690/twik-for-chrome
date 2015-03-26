@@ -37,7 +37,8 @@
 }
 
 #twik-container h2, #twik-popup-container h2 {
-  font-size: 24px;
+  color: #fff;
+  font-size: 30px;
 }
 
 #twik-popup-container h2 {
@@ -53,8 +54,9 @@
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   width: auto;
-  padding: 8px;
-  background-color: #eceff1;
+  background-color: #fff;
+  /*padding: 8px;*/
+  /*background-color: #eceff1;*/
 }
 
 #twik-popup-container input, #twik-popup-container select {
@@ -123,7 +125,18 @@ a {
 }
 
 #profile-color-marker {
-  display: inline;
+  display: inline-block;
+  height: 22px;
+  vertical-align: top;
+  width: 22px;
+}
+
+.twik-header {
+  background-color: #4CAF50;
+}
+
+.twik-header, .twik-table {
+  padding: 8px;
 }
 
 .twik-table {
@@ -140,6 +153,10 @@ a {
   display: table-cell;
   border: none;
   padding: 7px 10px 5px 0px;
+}
+
+.twik-footer {
+  padding: 8px;
 }
 
 .twik-hide-pass-button {
