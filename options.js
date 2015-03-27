@@ -22,6 +22,8 @@ var colorPalette = new ColorPalette('color-palette', PROFILE_COLORS, 0, function
     var profileKey = $('#profile').val();
     bgPage.profileList.getProfile(profileKey).color = value;
     saveChanges(false, profileKey);
+    $('.twik-header').css('background-color', PROFILE_COLORS[value]); // Set profile color
+    $('#link-options').css('color', PROFILE_COLORS[value]); // Set profile color
   });
 
 window.onload = function() {
@@ -49,30 +51,30 @@ function setupUI() {
   populatePasswordLength();
   populatePasswordType();
   populateProfileList(-1);
-  
+
   $('#profile').change(function() {
     selectProfile($('#profile').val());
   });
-  
+
   $('#button_add_profile').click(function() {
     addProfile();
     var keys = bgPage.profileList.getKeys();
     saveChanges(true, keys[keys.length - 1]);
   });
-  
+
   $('#button_remove_profile').click(function() {
     removeProfile($('#profile').val());
   });
-  
+
   $('#sync_private_keys').change(function() {
     saveChanges(false, -1);
-  })
-  
+  });
+
   $('#name').change(function() {
     bgPage.profileList.getProfile($('#profile').val()).name = $('#name').val();
     saveChanges(true, $('#profile').val());
   });
-  
+
   $('#private_key, #password_length, #password_type').change(function() {
     var profile = bgPage.profileList.getProfile($('#profile').val());
     profile.private_key = $('#private_key').val();
@@ -101,6 +103,8 @@ function selectProfile(key) {
   $('#password_length').val(profile.password_length);
   $('#password_type').val(profile.password_type);
   $('#profile').val(key);
+  $('.twik-header').css('background-color', PROFILE_COLORS[profile.color]); // Set profile color
+  $('#link-options').css('color', PROFILE_COLORS[profile.color]); // Set profile color
   colorPalette.selectColor(profile.color);
 }
 
@@ -113,7 +117,7 @@ function populateProfileList(key) {
     var profile = bgPage.profileList.getProfile(keys[i]);
     $('#profile').append(new Option(profile.name, keys[i]));
   }
-  
+
   if ($.inArray(key, keys) != -1) {
     selectProfile(key);
   } else {
@@ -140,7 +144,7 @@ function addProfile() {
       tags: {},
       sites: {}
     });
-    
+
     saveChanges(true, profileCount);
 }
 

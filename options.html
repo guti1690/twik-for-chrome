@@ -34,13 +34,13 @@
   </head>
   <body>
     <div id="twik-container">
-      <header>
+      <header class="twik-header twik-background-header">
         <img src="images/icon-64.png" alt="Twik" width="64px" height="64px"/>
-        <h1>twik</h1>
+        <span class="twik-background-title">Twik</span>
       </header>
-      
+
       <h2 i18n="profile_options"></h2>
-      
+
       <div class="twik-table">
         <div class="twik-row">
           <div class="twik-cell">
@@ -98,7 +98,7 @@
           </div>
         </div>
       </div>
-      
+
       <h2 i18n="synchronization_options"></h2>
       <div class="twik-table">
         <div class="twik-row">
@@ -111,9 +111,11 @@
           </div>
         </div>
       </div>
-      
+
       <br/><br/>
-      <a href="about.html" target="_blank" i18n="about"></a>
+      <div class="twik-footer">
+        <a id="link-options" href="about.html" target="_blank" i18n="about"></a>
+      </div>
     </div>
   </body>
 </html>

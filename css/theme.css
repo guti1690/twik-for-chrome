@@ -17,6 +17,10 @@
  * along with Twik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+body {
+  margin: 0;
+}
+
 #twik-container header, #twik-popup-container header {
   display: block;
   vertical-align: baseline;
@@ -29,7 +33,13 @@
   vertical-align: middle;
 }
 
-#twik-container h1, #twik-container h2, #twik-popup-container h1, #twik-popup-container h2 {
+#twik-container h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 48px;
+  color: #303030;
+}
+
+#twik-container h2, #twik-popup-container h1, #twik-popup-container h2 {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 48px;
   color: #303030;
@@ -131,11 +141,24 @@ a {
   width: 22px;
 }
 
-.twik-header {
-  background-color: #4CAF50;
+.twik-background-header {
+  height: 6em;
 }
 
-.twik-header, .twik-table {
+.twik-background-title {
+  color: #fff;
+  display: inline-block;
+  font-size: 48px;
+  line-height: 1.3em;
+  vertical-align: middle;
+}
+
+.twik-header{
+  /*background-color: #4CAF50;*/
+  padding: 8px;
+}
+
+.twik-table {
   padding: 8px;
 }
 
