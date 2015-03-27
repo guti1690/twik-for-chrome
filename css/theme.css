@@ -47,11 +47,11 @@ body {
 }
 
 #twik-container h2, #twik-popup-container h2 {
-  color: #fff;
   font-size: 30px;
 }
 
 #twik-popup-container h2 {
+  color: #fff;
   margin-top: 0;
 }
 
@@ -141,7 +141,8 @@ a {
   width: 22px;
 }
 
-.twik-background-header {
+.twik-header-large {
+  background-color: #4CAF50;
   height: 6em;
 }
 
@@ -153,8 +154,7 @@ a {
   vertical-align: middle;
 }
 
-.twik-header{
-  /*background-color: #4CAF50;*/
+.twik-header {
   padding: 8px;
 }
 
